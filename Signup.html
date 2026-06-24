@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',sans-serif;
+margin:0;
+background:#eef2f7;
+}
+
+.header{
+background:#0a2c6b;
+color:white;
+text-align:center;
+padding:35px;
+}
+
+.nav{
+background:#102a54;
+padding:12px;
+text-align:center;
+}
+
+.nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+.nav a:hover{
+color:#cbd6ff;
+}
+
+.container{
+width:45%;
+margin:auto;
+background:white;
+padding:35px;
+margin-top:30px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.container h2{
+text-align:center;
+color:#0a2c6b;
+}
+
+label{
+font-weight:bold;
+color:#0a2c6b;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:5px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:5px;
+box-sizing:border-box;
+}
+
+textarea{
+height:80px;
+resize:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0a2c6b;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#061d47;
+}
+
+.login-link{
+text-align:center;
+margin-top:15px;
+}
+
+footer{
+background:#0a2c6b;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Food Donation Management System</h1>
+<p>Create Your Account</p>
+</div>
+
+<div class="nav">
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+<a href="/donate">Donate</a>
+<a href="/view">View Donations</a>
+<a href="/accepted">Accepted Donations</a>
+</div>
+
+<div class="container">
+
+<h2>Signup Form</h2>
+
+<form method="POST">
+
+<label>Full Name</label>
+<input type="text" name="name" placeholder="Enter your full name" required>
+
+<label>Email Address</label>
+<input type="email" name="email" placeholder="Enter your email" required>
+
+<label>Phone Number</label>
+<input type="text" name="phone" placeholder="Enter your phone number" required>
+
+<label>Address</label>
+<textarea name="address" placeholder="Enter your address" required></textarea>
+
+<label>Username</label>
+<input type="text" name="username" placeholder="Create username" required>
+
+<label>Password</label>
+<input type="password" name="password" placeholder="Create password" required>
+
+<button type="submit">Create Account</button>
+
+</form>
+
+<div class="login-link">
+<p>Already have an account?
+<a href="/login">Login Here</a></p>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Food Donation Management System</p>
+</footer>
+
+</body>
+</html>
