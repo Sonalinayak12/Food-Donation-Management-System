@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>KK Food Donation</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Poppins',sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 50px;
+            background:black;
+            color:white;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            z-index:1000;
+        }
+
+        .logo{
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        .menu{
+            display:flex;
+            align-items:center;
+            gap:25px;
+        }
+
+        .menu a{
+            color:white;
+            text-decoration:none;
+            font-size:17px;
+            transition:0.3s;
+        }
+
+        .menu a:hover{
+            color:orange;
+        }
+
+        /* PROFILE BUTTON */
+        .profile-btn{
+            background:orange;
+            color:white !important;
+            padding:10px 18px;
+            border-radius:25px;
+            text-decoration:none;
+            font-weight:bold;
+            box-shadow:0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .profile-btn:hover{
+            background:#ff8800;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            height:100vh;
+            background:url("{{ url_for('static', filename='images/food-bg.png') }}");
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding-top:80px;
+        }
+
+        /* OVERLAY */
+        .overlay{
+            background:rgba(0,0,0,0.55);
+            padding:30px 40px;
+            border-radius:15px;
+            text-align:center;
+            color:white;
+            width:70%;
+            max-width:700px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.4);
+        }
+
+        .overlay h1{
+            font-size:36px;
+            margin-bottom:15px;
+        }
+
+        .slogan1{
+            font-family:'Great Vibes',cursive;
+            font-size:32px;
+            color:pink;
+            margin-bottom:10px;
+        }
+
+        .slogan2{
+            font-family:'Pacifico',cursive;
+            font-size:18px;
+            margin-bottom:15px;
+        }
+
+        .overlay p{
+            font-size:18px;
+            margin-bottom:20px;
+        }
+
+        /* BUTTONS */
+        .btn{
+            display:inline-block;
+            background:orange;
+            color:white;
+            padding:12px 25px;
+            margin:8px;
+            border-radius:6px;
+            text-decoration:none;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:red;
+        }
+
+        /* SCROLL CONTENT */
+        .content{
+            padding:80px 20px;
+            background:#f5f7fa;
+        }
+
+        .block{
+            max-width:800px;
+            margin:40px auto;
+            padding:30px;
+            background:white;
+            border-radius:12px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        .block h2{
+            font-size:28px;
+            color:#0a2c6b;
+            margin-bottom:10px;
+        }
+
+        .block p{
+            font-size:18px;
+            color:#444;
+        }
+        /* HOW IT WORKS SECTION */
+.how{
+    background:url("{{ url_for('static', filename='images/how.jpg') }}") center/cover no-repeat;
+    color:white;
+}
+
+/* IMPACT SECTION */
+.impact{
+    background:url("{{ url_for('static', filename='images/impact.jpg') }}") center/cover no-repeat;
+    color:white;
+}
+
+/* WHY SECTION */
+.why{
+    background:url("{{ url_for('static', filename='images/why.jpg') }}") center/cover no-repeat;
+    color:white;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.block{
+    position:relative;
+}
+
+.block::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.block h2, .block p{
+    position:relative;
+    z-index:1;
+}
+.content {
+    background: url("{{ url_for('static', filename='images/bg2.jpg') }}") no-repeat center center/cover;
+    padding: 80px 20px;
+}
+.content {
+    position: relative;
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 0;
+}
+
+.block {
+    position: relative;
+    z-index: 1;
+}
+.block {
+    background: transparent;
+    color: white;
+}
+.block h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+.block {
+    background: rgba(255, 255, 255, 0.15); /* light glass effect */
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 30px;
+    color: white;
+}
+.block p {
+    font-family:'Great Vibes',cursive;
+    font-size:32px;
+    color:pink;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+.block {
+    .overlay{
+            background:rgba(0,0,0,0.55);
+            padding:30px 40px;
+            border-radius:15px;
+            text-align:center;
+            color:white;
+            width:70%;
+            max-width:700px;
+            text-align: center;
+            color: white;
+            box-shadow:0 5px 20px rgba(0,0,0,0.4);
+        }
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+
+        <div class="logo">
+            KK Food Donation ❤️
+        </div>
+
+        <div class="menu">
+
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/donate">Donate</a>
+            <a href="/view">View Donations</a>
+            <a href="/accepted">Accepted</a>
+
+            {% if session.get('username') %}
+                <a href="/profile" class="profile-btn">👤</a>
+            {% else %}
+                <a href="/login" class="profile-btn">Sign In</a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+
+        <div class="overlay">
+
+            <h1>Welcome to Nayak's Food Donation</h1>
+
+            <div class="slogan1">
+                Share Food • Spread Love
+            </div>
+
+            <div class="slogan2">
+                Reducing Hunger, Preventing Food Waste
+            </div>
+
+            <p>
+                Donate surplus food and help someone in need today.
+            </p>
+
+            <a href="/donate" class="btn">Donate Food</a>
+            <a href="/view" class="btn">View Donations</a>
+
+        </div>
+
+    </div>
+
+    <!-- SCROLL CONTENT -->
+    <div class="content" id="content">
+
+        <div class="block">
+            <h2>How It Works</h2>
+            <p>Food Saved → Hunger Reduced → Lives Changed</p>
+        </div>
+
+        <div class="block">
+            <h2>Our Impact</h2>
+            <p>500+ meals saved every month</p>
+        </div>
+
+        <div class="block">
+            <h2>Why We Do This</h2>
+            <p>We reduce food waste and help people in need</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
