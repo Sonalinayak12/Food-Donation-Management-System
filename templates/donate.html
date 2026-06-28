@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Donate Food</title>
+
+<style>
+
+body{
+font-family:'Segoe UI',sans-serif;
+margin:0;
+background:#eef2f7;
+}
+
+/* Header */
+.header{
+background:#0a2c6b;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/* Navigation bar */
+.nav{
+background:#102a54;
+padding:12px;
+text-align:center;
+}
+
+.nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+.nav a:hover{
+color:#cbd6ff;
+}
+
+/* Main container */
+.container{
+width:70%;
+margin:auto;
+background:white;
+padding:40px;
+margin-top:30px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Form styling */
+label{
+font-weight:bold;
+color:#0a2c6b;
+}
+
+input, select, textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+textarea{
+height:100px;
+}
+
+/* Button */
+button{
+background:#0a2c6b;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#061d47;
+}
+
+/* Info box */
+.info{
+margin-top:25px;
+background:#f1f5ff;
+padding:20px;
+border-left:5px solid #0a2c6b;
+}
+
+/* Footer */
+footer{
+background:#0a2c6b;
+color:white;
+text-align:center;
+padding:18px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Donate Food</h1>
+<p>Your small act can feed someone in need</p>
+</div>
+
+<div class="nav">
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+<a href="/donate">Donate</a>
+<a href="/view">View Donations</a>
+</div>
+
+<div class="container">
+
+<h2>Food Donation Form</h2>
+
+<form action="/donate" method="POST">
+
+<label>Donor Name</label>
+<input type="text" name="name" required>
+
+<label>Food Item</label>
+<input type="text" name="food" required>
+
+<label>Quantity</label>
+<input type="text" name="quantity" required>
+
+<label>Pickup Location</label>
+<input type="text" name="location" required>
+
+<label>Phone Number</label>
+<input type="tel"
+       name="phone"
+       maxlength="10"
+       pattern="[0-9]{10}"
+       oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+       required>
+
+<label>Address</label>
+<textarea name="address" required></textarea>
+
+<label>Expiry Time (in hours)</label>
+<input type="number" name="expiry" required>
+
+<label>Additional Notes</label>
+<textarea name="notes"></textarea>
+
+<!-- 📍 LOCATION (AUTO CAPTURE) -->
+<input type="hidden" name="latitude" id="latitude">
+<input type="hidden" name="longitude" id="longitude">
+
+<button type="submit">Submit Donation</button>
+
+</form>
+
+<div class="info">
+<h3>Why Donate?</h3>
+<p>
+Donating surplus food helps reduce food waste and supports people who
+are struggling with hunger. Every contribution makes a meaningful
+difference in building a caring and sustainable community.
+</p>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Food Donation System | Share Food • Spread Love</p>
+</footer>
+
+<!-- 📍 GEOLOCATION SCRIPT -->
+<script>
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+            document.getElementById("latitude").value = position.coords.latitude;
+            document.getElementById("longitude").value = position.coords.longitude;
+        },
+        function(error) {
+            console.log("Location error:", error);
+        }
+    );
+} else {
+    alert("Geolocation not supported");
+}
+</script>
+
+</body>
+</html>

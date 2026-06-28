@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Accepted Donations</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f4f6f9;
+margin:0;
+}
+
+header{
+background:#0b2e6b;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+nav{
+background:#102f5e;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+width:85%;
+margin:auto;
+margin-top:40px;
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#173a77;
+color:white;
+padding:10px;
+}
+
+td{
+padding:10px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+.map-link{
+    color:#0a2c6b;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.map-link:hover{
+    color:#ff6600;
+}
+
+.map-btn{
+    background:#ff6600;
+    color:white;
+    padding:6px 12px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+}
+.map-btn:hover{
+    background:#e65c00;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Accepted Food Donations</h1>
+<p>Food assigned to receivers</p>
+</header>
+
+<nav>
+<a href="/">Home</a>
+<a href="/donate">Donate</a>
+<a href="/view">View Donations</a>
+<a href="/accepted">Accepted Donations</a>
+</nav>
+
+<div class="container">
+
+<table>
+
+<tr>
+    <th>Donor</th>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Receiver Name</th>
+    <th>Receiver Phone</th>
+    <th>Receiver Address</th>
+    <th>Location</th>
+</tr>
+
+{% for donation in donations %}
+
+<tr>
+    <td>{{ donation[1] }}</td>
+    <td>{{ donation[2] }}</td>
+    <td>{{ donation[3] }}</td>
+    <td>{{ donation[11] }}</td>
+    <td>{{ donation[12] }}</td>
+    <td>{{ donation[13] }}</td>
+
+    <!-- LOCATION FIX -->
+<td>
+    {% if donation[4] %}
+        <a class="map-btn" target="_blank"
+           href="https://www.google.com/maps?q={{ donation[4] }}">
+            📍 {{ donation[4] }}
+        </a>
+    {% else %}
+        <span style="color:gray;">Not Available</span>
+    {% endif %}
+</td>
+</tr>
+
+{% endfor %}
+</table>
+
+</div>
+
+</body>
+</html>

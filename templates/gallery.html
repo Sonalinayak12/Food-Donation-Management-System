@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#f4f6f9;
+}
+
+/* NAVBAR */
+nav{
+background:#0b2e6b;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ffcc00;
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:30px;
+background:#173a77;
+color:white;
+}
+
+/* GALLERY GRID */
+.container{
+width:90%;
+margin:auto;
+padding:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card .desc{
+padding:15px;
+text-align:center;
+}
+
+.card h3{
+margin:0;
+color:#0b2e6b;
+}
+
+.card p{
+font-size:14px;
+color:#555;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:15px;
+background:#0b2e6b;
+color:white;
+margin-top:30px;
+}
+.upload-box{
+background:white;
+width:80%;
+margin:20px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.upload-box input,
+.upload-box textarea{
+width:90%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.upload-box button{
+background:#0b2e6b;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.upload-box button:hover{
+background:#173a77;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/donate">Donate</a>
+<a href="/view">View Donations</a>
+<a href="/accepted">Accepted</a>
+<a href="/gallery">Gallery</a>
+</nav>
+
+<header>
+<h1>Food Donation Gallery</h1>
+<p>Moments of kindness captured in real time</p>
+</header>
+
+<div class="upload-box">
+    <h2>Add New Gallery Photo</h2>
+
+    <form action="/upload_photo" method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo" accept="image/*" required>
+
+        <textarea name="description"
+                  placeholder="Enter photo description"
+                  required></textarea>
+
+        <button type="submit">Upload Photo</button>
+    </form>
+</div>
+
+<div class="container">
+
+<!-- CARD 1 -->
+<div class="card">
+<img src="{{ url_for('static', filename='images/food1.png') }}">
+<div class="desc">
+<h3>Fresh Meals Donated</h3>
+<p>Volunteers distributing hot meals to people in need.</p>
+</div>
+</div>
+
+<!-- CARD 2 -->
+<div class="card">
+<img src="{{ url_for('static', filename='images/food2.png') }}">
+<div class="desc">
+<h3>Community Support</h3>
+<p>Local community coming together to reduce food waste.</p>
+</div>
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+<img src="{{ url_for('static', filename='images/food3.png') }}">
+<div class="desc">
+<h3>Food Collection Drive</h3>
+<p>Collected surplus food from hotels and restaurants.</p>
+</div>
+</div>
+
+<!-- CARD 4 -->
+<div class="card">
+<img src="{{ url_for('static', filename='images/food4.png') }}">
+<div class="desc">
+<h3>Distribution Event</h3>
+<p>Food being distributed to homeless people.</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 KK Food Donation | Share Food • Spread Love</p>
+</footer>
+
+</body>
+</html>

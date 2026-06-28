@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Accept Food</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f4f6f9;
+margin:0;
+}
+
+header{
+background:#0b2e6b;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+.container{
+width:60%;
+margin:auto;
+margin-top:40px;
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#27ae60;
+color:white;
+padding:10px 20px;
+border:none;
+margin-top:15px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e874b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Receiver Details</h1>
+<p>Fill the details of the person receiving the food</p>
+</header>
+
+<div class="container">
+
+<form method="POST" action="{{ url_for('confirm_accept', donation_id=donation[0]) }}">
+
+    <label>Receiver Name</label>
+    <input type="text" name="receiver_name" required>
+
+    <label>Receiver Phone</label>
+    <input type="tel"
+       name="receiver_phone"
+       maxlength="10"
+       pattern="[0-9]{10}"
+       oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+       required>
+
+    <label>Receiver Address</label>
+    <textarea name="receiver_address" required></textarea>
+
+    <button type="submit">Confirm Acceptance</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
